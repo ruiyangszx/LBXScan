@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
       all.source_files = 'LBXScan/LBXNative/*.{h,m}','LBXScan/LBXZXing/**/*.{h,m}','LBXScan/LBXZBar/*.{h,m}','LBXScan/UI/*.{h,m}'
       all.libraries = 'iconv','z'
       all.resource     = 'LBXScan/UI/CodeScan.bundle'
-      all.dependency 'ZBarSDK', '~> 1.3.1'
+      all.dependency 'ZBarSDK', :git => 'https://github.com/ruiyangszx/ZBar.git'
       all.dependency 'LBXScan/Types','~> 2.2'
       all.ios.frameworks = 'AVFoundation', 'CoreGraphics', 'CoreMedia', 'CoreVideo', 'ImageIO', 'QuartzCore'
       all.prefix_header_contents = '#import "LBXScanNative.h"','#import "ZXingWrapper.h"','#import "LBXZBarWrapper.h"','#import "LBXScanView.h"'
@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
     s.subspec 'LBXZBar' do |lbxZBar|
        lbxZBar.source_files = 'LBXScan/LBXZBar/*.{h,m}'
        lbxZBar.libraries = 'iconv','z'
-       lbxZBar.dependency 'ZBarSDK', '~> 1.3.1'
+       lbxZBar.dependency 'ZBarSDK', :git => 'https://github.com/ruiyangszx/ZBar.git'
        lbxZBar.ios.frameworks = 'AVFoundation', 'CoreGraphics', 'CoreMedia'
        lbxZBar.prefix_header_contents = '#import "LBXZBarWrapper.h"'
        lbxZBar.dependency 'LBXScan/Types','~> 2.2'
